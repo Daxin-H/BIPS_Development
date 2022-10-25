@@ -8,12 +8,14 @@ app.get('/', (req, res) => {
 
     res
         .status(201) // 201 = Created
-        .render(current.now())
         .set({
             'X-Custom-Header': "I'm a header value!",
             'Content-Type': 'text/html',
+
         })
-        .send('<h1>Some HTML!</h1>');
+        .send('<h1>Some HTML!</h1>'
+        );
+
 });
 
 const server = app.listen(7000, () => {
