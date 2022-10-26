@@ -1,13 +1,13 @@
 html {
   
-    font-size: 10px;
-    background-color: #00539F;
-    font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  background-color: #00539F;
+  font-family: 'Open Sans', sans-serif;
   }
 
 .search  {
   width:300px;
-  height:25px;
+  height:250px;
   border: none;
   margin:7px;
 }
@@ -45,6 +45,7 @@ p, li {
 
 body {
   width: 600px;
+  min-height: 600px;
   margin: 0 auto;
   background-color: #FF9500;
   padding: 0 20px 20px 20px;
@@ -56,27 +57,20 @@ img {
   margin: 0 auto;
 }
 
-.profile-name {
-  width:300px;
-  height:25px;
-  border: none;
-  margin:7px;
+.username{
+  font-size: 20px;
+  text-align: center
 }
-.profile-username {
-  margin-top: 7rem;
-  width: 65%;
-  margin-left: auto;
-  margin-right: auto; 
+.profile{
+  font-size: 20px; 
+  text-align: center
 }
-.profile-repo {
-  margin-top: 7rem;
-  width: 65%;
-  margin-left: auto;
-  margin-right: auto; 
+
+.repo {
+  font-size: 20px; 
+  text-align: center
 }
-.profile-url {
-  margin-top: 7rem;
-  width: 65%;
-  margin-left: auto;
-  margin-right: auto; 
+.url {
+  font-size: 20px; 
+  text-align: center
 }
