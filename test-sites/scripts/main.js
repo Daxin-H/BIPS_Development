@@ -9,8 +9,9 @@ myContent.textContent = "Current tims is -> " + hour + ":" + mint + ":" + sec;
 const client_id = 'c57a8bd108c9ebfa4db2';
 const client_secret_id = 'ddf146cb7beb2374af8c5a0d2df8feb4eedf1330';
 // const redirURl = 'http://example.com/path';
+
 const inputValue = document.querySelector("#search")
-const NameContainer = document.querySelector("#name")
+const NameContainer = document.querySelector("profile-name")
 
 const myImage = document.querySelector("img");
 myImage.onclick = () => {
@@ -29,10 +30,9 @@ const fetchUser = async (user) => {
     return { data }
 }
 const showData = () => {
-    console.log(inputValue)
-
     fetchUser(inputValue.value).then((res) => {
         console.log(res);
+        NameContainer.innerHTML = `Name: <span class = "profile-name">${res.data.name}</span>`
     })
 
 }
