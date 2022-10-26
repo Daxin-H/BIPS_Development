@@ -1,9 +1,9 @@
 const express = require('express');
-const { read } = require('fs');
+// const { read } = require('fs');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 7000;
-// app.use(express.static(__dirname + '/public'));
+app.use(express.static('test-sites'));
 
 // sendFile will go here
 app.get('/', function (req, res) {
