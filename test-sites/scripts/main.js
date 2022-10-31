@@ -4,8 +4,8 @@ var mint = d.getMinutes();
 var sec = d.getSeconds();
 
 const myHeader = document.querySelector("h1");
-const myContent = document.querySelector("h2");
-myContent.textContent = "Current tims is -> " + hour + ":" + mint + ":" + sec;
+// const myContent = document.querySelector("h2");
+// myContent.textContent = "Current tims is -> " + hour + ":" + mint + ":" + sec;
 
 
 const gitHubForm = document.getElementById('gitHubForm');
@@ -28,7 +28,7 @@ const countings = {
 
 }
 
-const Fetch_Issue = () => {
+const Fetch_Issue = (out_num) => {
   fetch(`https://api.github.com/repos/google/guava/issues`)
     .then(response => response.json())
     .then(data => {
@@ -39,9 +39,10 @@ const Fetch_Issue = () => {
       <p><strong> java:${countings['java']}</p> 
       <p><strong> package:${countings['package']}</p> 
       `;
+      out_num = countings;
     })
-
     .catch(error => console.error(error))
+
 };
 
 const formatResults = (data, countings) => {
@@ -67,5 +68,5 @@ const formatResults = (data, countings) => {
 
 };
 
-
-Fetch_Issue();
+const out_num = {};
+Fetch_Issue(out_num);
