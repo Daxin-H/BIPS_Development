@@ -19,30 +19,53 @@ const NameContainer = document.querySelector(".username");
 //   return issue_data;
 // }
 
+
+const countings = {
+  'p3': 0,
+  'type': 0,
+  'package': 0,
+  'java': 0,
+
+}
+
 const Fetch_Issue = () => {
   fetch(`https://api.github.com/repos/google/guava/issues`)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
-      formatResults(data);
+      count_temp = formatResults(data, countings);
+      console.log(countings);
+      NameContainer.innerHTML = `<p><strong> P3:${countings['p3']} </p> 
+      <p><strong> type:${countings['type']}</p> 
+      <p><strong> java:${countings['java']}</p> 
+      <p><strong> package:${countings['package']}</p> 
+      `;
     })
+
     .catch(error => console.error(error))
 };
 
-
-const formatResults = (data) => {
+const formatResults = (data, countings) => {
   // Loop over each object in data array
   for (let i in data) {
     for (let j in data[i].labels) {
+      const issue = data[i].labels[j]
 
-      // Create the html markup for each li
-      console.log(data[i].labels[j]);
+      if (issue.name.includes("package")) {
+        countings['package'] += 1;
+      }
+      if (issue.name.includes("type")) {
+        countings['type'] += 1;
+      }
+      if (issue.name === 'java') {
+        countings['java'] += 1;
+      }
+      if (issue.name === 'P3') {
+        countings['p3'] += 1;
+      }
     }
-
   }
+
 };
-// NameContainer.innerHTML = `Name: <class = "username">${data[0].title}</span>`;
-// 
 
 
 Fetch_Issue();
