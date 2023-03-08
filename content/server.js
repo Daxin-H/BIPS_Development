@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = process.env.PORT || 7000;
-app.use(express.static('test-sites'));
+app.use(express.static('content'));
 
 // sendFile will go here
 app.get('/', function (req, res) {
