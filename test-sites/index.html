@@ -5,13 +5,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	</head>
+
 	<body>
+		<h>HIHIHI</h>
 		<script>
 			getData();
 			async function getData() {
 				const response = await fetch('test.csv');
 				const data = await response.text();
-				console.log(data);
+				const row = data.split('\n');
+				console.log(row);
+
+				// table.forEach((row) => {
+				// 	const cols = row.split(',');
+				// 	const year = cols[0];
+				// 	const temp = cols[1];
+				// });
 			}
 		</script>
 	</body>
