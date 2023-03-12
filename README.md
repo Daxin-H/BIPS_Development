@@ -31,3 +31,7 @@ npm start
 ```  
 
 to inital the website in the computer. You should see a huge chart in the website.
+
+
+<img width="671" alt="pic" src="https://user-images.githubusercontent.com/78289898/224536041-0255bca2-4d40-402f-aa29-58508fd6e652.png">
+
