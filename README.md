@@ -16,6 +16,13 @@ After the initial, you should see
     "start": "react-scripts start"
   },
 ```
+Then to make sure include react package, use this command line
+
+```ruby
+npm install --save react react-dom @types/react @types/react-dom
+```
+
+
 
 If you miss the "start" command line, just copy and paste the code above
 Then in the command line use
